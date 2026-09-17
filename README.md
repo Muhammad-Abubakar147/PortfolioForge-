@@ -34,3 +34,30 @@ You don't need to build everything from scratch.
 Clone the repository, update your personal information, replace your images and projects, customize the design, and deploy your portfolio.
 
 ---
+
+## ✨ Features
+
+- 🎨 Modern & premium UI
+- 📱 Fully responsive design
+- 🌙 Dark / Light mode
+- 🧊 Glassmorphism UI
+- ✨ Smooth animations
+- 🖱️ Interactive hover effects
+- 🎯 Smooth scrolling navigation
+- 👤 Personal profile section
+- 💼 Projects showcase
+- 🧠 Skills section
+- 🎓 Education section
+- 🏆 Achievements section
+- 📄 Resume section
+- 📬 Contact section
+- 🔗 Social media integration
+- 🔍 SEO-friendly structure
+- ♿ Accessibility-friendly structure
+- ⚡ Lightweight & fast
+- 🧩 Easy customization
+- 🚀 Deployment-ready
+- 💻 Pure HTML, CSS & JavaScript
+- 🔓 Open-source friendly
+
+---
