@@ -15,3 +15,22 @@
 </p>
 
 ---
+## 🌐 Live Preview
+
+🚧 **Live Demo:** Coming Soon
+
+---
+
+## 📖 About
+
+**PortfolioForge** is a reusable and customizable portfolio template designed for developers, students, designers, researchers, AI/ML enthusiasts, freelancers, and professionals.
+
+The goal of PortfolioForge is simple:
+
+> **Give everyone a strong foundation to build and launch their own professional portfolio.**
+
+You don't need to build everything from scratch.
+
+Clone the repository, update your personal information, replace your images and projects, customize the design, and deploy your portfolio.
+
+---
