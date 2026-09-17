@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhammad - AI &amp; Python Developer | Building intelligent solutions with Machine Learning and Python">
+    <title>Muhammad | AI &amp; Python Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: 34 211 238;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.7);
+        }
+        
+        .hero-bg {
+            background: radial-gradient(at center bottom, rgba(34, 211, 238, 0.15), transparent 70%);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: rgb(34 211 238);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+        
+        .skill-bar {
+            height: 6px;
+            background: linear-gradient(90deg, rgb(34 211 238), rgb(165 243 252));
+            transition: width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .section-title {
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: rgb(34 211 238);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white overflow-x-hidden font-['Inter']">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-cyan-400 rounded-2xl flex items-center justify-center text-zinc-950 font-bold text-2xl leading-none">M</div>
+                <span class="text-2xl font-semibold tracking-tighter font-['Space_Grotesk']">Muhammad</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button onclick="toggleTheme()" id="theme-toggle"
+                        class="w-10 h-10 flex items-center justify-center rounded-2xl hover:bg-white/10 transition-colors">
+                    <i class="fas fa-moon text-xl"></i>
+                </button>
+                <a href="#contact" 
+                   class="px-6 py-3 bg-white text-zinc-900 rounded-3xl font-semibold text-sm hover:bg-cyan-300 transition-all active:scale-95">
+                    Let's Talk
+                </a>
+                
+                <!-- Mobile Menu -->
+                <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 flex items-center justify-center">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 py-6 px-6">
+            <div class="flex flex-col gap-6 text-lg">
+                <a href="#about" onclick="toggleMobileMenu()" class="hover:text-cyan-400">About</a>
+                <a href="#skills" onclick="toggleMobileMenu()" class="hover:text-cyan-400">Skills</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-cyan-400">Projects</a>
+                <a href="#achievements" onclick="toggleMobileMenu()" class="hover:text-cyan-400">Achievements</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-cyan-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="min-h-screen hero-bg flex items-center pt-20 relative">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-3xl glass text-sm">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    Open to opportunities
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-bold tracking-tighter leading-none font-['Space_Grotesk']">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Muhammad</span>
+                </h1>
+                
+                <div class="text-3xl md:text-4xl text-zinc-400 font-light">
+                    AI &amp; Python Developer
+                </div>
+                
+                <p class="max-w-md text-lg text-zinc-400">
+                    Turning data into intelligence. Passionate about building ML-powered applications and elegant Python solutions.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" 
+                       class="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-semibold rounded-3xl flex items-center gap-3 transition-all active:scale-95">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    
+                    <a href="#contact" 
+                       class="px-8 py-4 border border-white/30 hover:border-white/70 rounded-3xl font-medium transition-all">
+                        Get In Touch
+                    </a>
+                </div>
+                
+                <div class="flex gap-8 pt-6">
+                    <div>
+                        <div class="text-4xl font-semibold">15+</div>
+                        <div class="text-zinc-500 text-sm">Projects Completed</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-semibold">8</div>
+                        <div class="text-zinc-500 text-sm">AI Models Trained</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-semibold">30+</div>
+                        <div class="text-zinc-500 text-sm">GitHub Streak</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Visual -->
+            <div class="relative flex justify-center">
+                <div class="relative">
+                    <div class="w-80 h-80 md:w-96 md:h-96 rounded-[4rem] bg-gradient-to-br from-cyan-500/20 to-purple-500/20 backdrop-blur-3xl flex items-center justify-center border border-white/10 floating">
+                        <div class="w-64 h-64 rounded-3xl bg-zinc-900/80 border border-cyan-400/30 flex items-center justify-center overflow-hidden">
+                            <div class="text-center">
+                                <div class="text-8xl mb-4">🧠</div>
+                                <div class="text-cyan-400 font-mono text-sm tracking-[4px]">AI POWERED</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating badges -->
+                    <div class="absolute -top-6 -left-6 glass px-6 py-3 rounded-3xl flex items-center gap-3 shadow-2xl">
+                        <i class="fas fa-python text-3xl text-yellow-400"></i>
+                        <div>
+                            <div class="font-semibold">Python Expert</div>
+                            <div class="text-xs text-zinc-400">3+ years</div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -bottom-8 right-8 glass px-6 py-3 rounded-3xl shadow-2xl">
+                        <div class="flex items-center gap-2">
+                            <div class="text-emerald-400">●</div>
+                            <div class="text-sm font-medium">Available for freelance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-12 left-1/2 flex flex-col items-center gap-2 text-xs tracking-widest">
+            <div>SCROLL TO EXPLORE</div>
+            <div class="w-px h-12 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 bg-zinc-900">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-4 py-2 rounded-full bg-white/5 text-cyan-400 text-sm font-medium">CHAPTER 01</span>
+                <h2 class="section-title text-5xl font-semibold mt-4 inline-block">About Me</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5">
+                    <div class="glass rounded-3xl p-2">
+                        <img src="https://picsum.photos/id/64/600/700" 
+                             alt="Muhammad" 
+                             class="rounded-3xl w-full aspect-[4/5] object-cover">
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 space-y-8">
+                    <p class="text-xl leading-relaxed text-zinc-300">
+                        I'm a passionate AI and Python developer based in Karachi, Pakistan. With a strong foundation in machine learning and data science, 
+                        I love transforming complex problems into simple, intelligent solutions.
+                    </p>
+                    
+                    <p class="text-zinc-400">
+                        My journey began with Python and has evolved into building end-to-end AI applications. I'm constantly learning and experimenting with 
+                        the latest tools in the AI ecosystem — from LLMs to computer vision.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
+                        <div>
+                            <div class="uppercase text-xs tracking-widest text-zinc-500 mb-3">Currently Learning</div>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-white/5 rounded-2xl text-sm">LangChain</span>
+                                <span class="px-4 py-2 bg-white/5 rounded-2xl text-sm">RAG Systems</span>
+                                <span class="px-4 py-2 bg-white/5 rounded-2xl text-sm">Computer Vision</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uppercase text-xs tracking-widest text-zinc-500 mb-3">Based in</div>
+                            <div class="text-3xl font-medium">Karachi, Pakistan</div>
+                            <div class="text-emerald-400 text-sm mt-1">UTC +5</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" 
+                       class="inline-flex items-center gap-3 group">
+                        <span class="text-lg font-medium">Let's build something amazing together</span>
+                        <div class="w-10 h-px bg-white group-hover:w-20 transition-all"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-4 py-2 rounded-full bg-white/5 text-cyan-400 text-sm font-medium">CHAPTER 02</span>
+                <h2 class="section-title text-5xl font-semibold mt-4 inline-block">Skills &amp; Tools</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Programming -->
+                <div class="glass rounded-3xl p-8">
+                    <div class="flex items-center gap-4 mb-8">
+                        <i class="fas fa-code text-4xl text-cyan-400"></i>
+                        <div>
+                            <h3 class="text-2xl font-semibold">Development</h3>
+                            <p class="text-zinc-400 text-sm">Core Technologies</p>
+                        </div>
+                    </div>
+                    <div class="space-y-7">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Python</span>
+                                <span class="text-cyan-400">95%</span>
+                            </div>
+                            <div class="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="skill-bar w-[95%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>HTML / CSS / JS</span>
+                                <span class="text-cyan-400">90%</span>
+                            </div>
+                            <div class="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="skill-bar w-[90%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Git &amp; GitHub</span>
+                                <span class="text-cyan-400">85%</span>
+                            </div>
+                            <div class="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="skill-bar w-[85%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI/ML -->
+                <div class="glass rounded-3xl p-8">
+                    <div class="flex items-center gap-4 mb-8">
+                        <i class="fas fa-brain text-4xl text-purple-400"></i>
+                        <div>
+                            <h3 class="text-2xl font-semibold">AI &amp; Data</h3>
+                            <p class="text-zinc-400 text-sm">Intelligence Layer</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 text-center">
+                        <div class="bg-white/5 rounded-2xl p-6">
+                            <div class="text-4xl mb-3">🐼</div>
+                            <div class="font-semibold">Pandas</div>
+                        </div>
+                        <div class="bg-white/5 rounded-2xl p-6">
+                            <div class="text-4xl mb-3">🔢</div>
+                            <div class="font-semibold">NumPy</div>
+                        </div>
+                        <div class="bg-white/5 rounded-2xl p-6">
+                            <div class="text-4xl mb-3">📊</div>
+                            <div class="font-semibold">Matplotlib</div>
+                        </div>
+                        <div class="bg-white/5 rounded-2xl p-6">
+                            <div class="text-4xl mb-3">🤖</div>
+                            <div class="font-semibold">TensorFlow</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools -->
+                <div class="glass rounded-3xl p-8">
+                    <div class="flex items-center gap-4 mb-8">
+                        <i class="fas fa-tools text-4xl text-amber-400"></i>
+                        <div>
+                            <h3 class="text-2xl font-semibold">Ecosystem</h3>
+                            <p class="text-zinc-400 text-sm">Productivity Suite</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="px-5 py-3 bg-white/5 rounded-2xl text-sm">VS Code</div>
+                        <div class="px-5 py-3 bg-white/5 rounded-2xl text-sm">Jupyter</div>
+                        <div class="px-5 py-3 bg-white/5 rounded-2xl text-sm">Figma</div>
+                        <div class="px-5 py-3 bg-white/5 rounded-2xl text-sm">Google Colab</div>
+                        <div class="px-5 py-3 bg-white/5 rounded-2xl text-sm">PyCharm</div>
+                        <div class="px-5 py-3 bg-white/5 rounded-2xl text-sm">Claude</div>
+                        <div class="px-5 py-3 bg-white/5 rounded-2xl text-sm">Grok</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-24 bg-zinc-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <span class="px-4 py-2 rounded-full bg-white/5 text-cyan-400 text-sm font-medium">CHAPTER 03</span>
+                    <h2 class="section-title text-5xl font-semibold mt-4">Featured Projects</h2>
+                </div>
+                <a href="https://github.com" target="_blank" 
+                   class="hidden md:flex items-center gap-2 text-sm group">
+                    <span>All projects on GitHub</span>
+                    <i class="fas fa-external-link-alt group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card glass rounded-3xl overflow-hidden">
+                    <div class="h-52 bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-6xl">
+                        📚
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-semibold text-2xl mb-2">Student Management System</h3>
+                        <p class="text-zinc-400 text-sm mb-6 line-clamp-3">
+                            Full-featured web application for managing student records, attendance, grades and reports with admin and student dashboards.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs px-3 py-1 bg-white/10 rounded-full">Python</span>
+                            <span class="text-xs px-3 py-1 bg-white/10 rounded-full">Flask</span>
+                            <span class="text-xs px-3 py-1 bg-white/10 rounded-full">SQLite</span>
+                            <span class="text-xs px-3 py-1 bg-white/10 rounded-full">HTML/CSS</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="flex-1 text-center py-3 border border-white/30 rounded-2xl text-sm hover:bg-white/5">Live Demo</a>
+                            <a href="https://github.com" target="_blank" class="flex-1 text-center py-3 bg-white text-zinc-900 rounded-2xl text-sm font-medium">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card glass rounded-3xl overflow-hidden">
+                    <div class="h-52 bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-6xl">
+                        🍽️
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-semibold text-2xl mb-2">Restaurant Management System</h3>
+                        <p class="text-zinc-400 text-sm mb-6 line-clamp-3">
+                            Complete POS system with table management, order tracking, inventory, billing and kitchen display system.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs px-3 py-1 bg-white/10 rounded-full">Python</span>
+                            <span class="text-xs px-3 py-1 bg-white/10 rounded-full">Django</span>
+                            <span class="text-xs px-3 py-1 bg-white/10 rounded-full">PostgreSQL</span>
+                            <span class="text-xs px-3 py-1 bg-white/10 rounded-full">Bootstrap</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="flex-1 text-center py-3 border border-white/30 rounded-2xl text-sm hover:bg-white/5">Live Demo</a>
+                            <a href="https://github.com" target="_blank" class="flex-1 text-center py-3 bg-white text-zinc-900 rounded-2xl text-sm font-medium">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 - Creative Suggestion: AI Sentiment Analyzer -->
+                <div class="project-card glass rounded-3xl overflow-hidden">
+                    <div class="h-52 bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center text-6xl">
+                        📝
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-semibold text-2xl mb-2">AI Sentiment Analyzer</h3>
+                        <p class="text-zinc-400 text-sm mb-6 line-clamp-3">
+                            Real-time sentiment analysis tool using Machine Learning. Analyzes customer reviews, social media posts with beautiful visualizations.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs px-3 py-1 bg-white/10 rounded-full">Python</span>
+                            <span class="text-xs px-3 py-1 bg-white/10 rounded-full">Scikit-learn</span>
+                            <span class="text-xs px-3 py-1 bg-white/10 rounded-full">NLTK</span>
+                            <span class="text-xs px-3 py-1 bg-white/10 rounded-full">Streamlit</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="flex-1 text-center py-3 border border-white/30 rounded-2xl text-sm hover:bg-white/5">Live Demo</a>
+                            <a href="https://github.com" target="_blank" class="flex-1 text-center py-3 bg-white text-zinc-900 rounded-2xl text-sm font-medium">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="py-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-4 py-2 rounded-full bg-white/5 text-cyan-400 text-sm font-medium">CHAPTER 04</span>
+                <h2 class="section-title text-5xl font-semibold mt-4 inline-block">Milestones</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass rounded-3xl p-8 text-center">
+                    <div class="text-5xl mb-6">🔥</div>
+                    <div class="text-4xl font-bold text-orange-400">42</div>
+                    <div class="mt-2">Day GitHub Streak</div>
+                    <div class="text-xs text-zinc-500 mt-8">Consistent learning &amp; building</div>
+                </div>
+                <div class="glass rounded-3xl p-8 text-center">
+                    <div class="text-5xl mb-6">🏆</div>
+                    <div class="text-4xl font-bold">Kaggle</div>
+                    <div class="mt-2">Top 15% - Titanic &amp; House Prices</div>
+                    <div class="text-xs text-zinc-500 mt-8">Competitions participated</div>
+                </div>
+                <div class="glass rounded-3xl p-8 text-center">
+                    <div class="text-5xl mb-6">📜</div>
+                    <div class="text-4xl font-bold">8</div>
+                    <div class="mt-2">Certificates Earned</div>
+                    <div class="text-xs text-emerald-400 mt-8">DeepLearning.AI • Coursera</div>
+                </div>
+                <div class="glass rounded-3xl p-8 text-center">
+                    <div class="text-5xl mb-6">👥</div>
+                    <div class="text-4xl font-bold">120+</div>
+                    <div class="mt-2">Students Mentored</div>
+                    <div class="text-xs text-zinc-500 mt-8">Python &amp; ML basics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 bg-zinc-900">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass rounded-3xl p-12 md:p-16">
+                <div class="grid md:grid-cols-2 gap-16">
+                    <div>
+                        <h2 class="text-5xl font-semibold leading-none">Let's create<br>something great.</h2>
+                        <p class="mt-8 text-zinc-400">
+                            Whether you have a project in mind or just want to say hi, I'm always excited to connect with fellow developers and innovators.
+                        </p>
+                        
+                        <div class="mt-12 space-y-6">
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-envelope text-cyan-400 text-2xl"></i>
+                                <div>
+                                    <div class="text-sm text-zinc-400">Email</div>
+                                    <a href="mailto:muhammad.dev@example.com" class="hover:text-cyan-300">muhammad.dev@example.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fab fa-linkedin text-cyan-400 text-2xl"></i>
+                                <div>
+                                    <div class="text-sm text-zinc-400">LinkedIn</div>
+                                    <a href="#" class="hover:text-cyan-300">linkedin.com/in/muhammad-dev</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fab fa-github text-cyan-400 text-2xl"></i>
+                                <div>
+                                    <div class="text-sm text-zinc-400">GitHub</div>
+                                    <a href="https://github.com" class="hover:text-cyan-300">@muhammad-codes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <input type="text" id="name" placeholder="Your name" 
+                                   class="w-full bg-white/5 border border-white/10 focus:border-cyan-400 rounded-2xl px-6 py-5 outline-none transition">
+                        </div>
+                        <div>
+                            <input type="email" id="email" placeholder="your@email.com" 
+                                   class="w-full bg-white/5 border border-white/10 focus:border-cyan-400 rounded-2xl px-6 py-5 outline-none transition">
+                        </div>
+                        <div>
+                            <textarea id="message" rows="5" placeholder="Your message..." 
+                                      class="w-full bg-white/5 border border-white/10 focus:border-cyan-400 rounded-3xl px-6 py-5 outline-none resize-none transition"></textarea>
+                        </div>
+                        <button type="submit"
+                                class="w-full py-6 bg-gradient-to-r from-cyan-400 to-blue-500 text-zinc-950 font-semibold rounded-3xl text-lg active:scale-[0.97] transition-all">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs text-zinc-500">
+            © 2026 Muhammad. Crafted with passion in Karachi.
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already included via CDN
+        
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            const icon = document.getElementById('theme-toggle').querySelector('i');
+            if (document.documentElement.classList.contains('dark')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.add('fa-moon');
+                icon.classList.remove('fa-sun');
+            }
+        }
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Form submission simulation
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Thank you! Your message has been received. I'll get back to you soon.");
+            this.reset();
+        });
+        
+        // Intersection Observer for skill bars and animations
+        function animateOnScroll() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Trigger animation (already handled by CSS width)
+                        entry.target.style.width = entry.target.style.width || '0%';
+                    }
+                });
+            }, { threshold: 0.6 });
+            
+            skillBars.forEach(bar => observer.observe(bar));
+        }
+        
+        // Initialize
+        window.onload = function() {
+            animateOnScroll();
+            
+            // Smooth scrolling for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Keyboard shortcut for theme (Ctrl/Cmd + K)
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    toggleTheme();
+                }
+            });
+        };
+        
+        // Progressive enhancement - particle background (simple)
+        console.log('%cPortfolio loaded successfully ✨', 'color: #22d3ee; font-family: monospace');
+    </script>
+</body>
+</html>
