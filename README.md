@@ -61,3 +61,19 @@ Clone the repository, update your personal information, replace your images and 
 - 🔓 Open-source friendly
 
 ---
+
+# 🛠️ Tech Stack
+
+PortfolioForge is intentionally built using simple and widely supported web technologies.
+
+| Technology | Purpose |
+|------------|---------|
+| HTML5 | Website structure |
+| CSS3 | Styling & responsive design |
+| JavaScript | Interactivity & animations |
+| CSS Animations | Visual effects |
+| JavaScript APIs | Dynamic functionality |
+
+No complicated framework is required.
+
+---
