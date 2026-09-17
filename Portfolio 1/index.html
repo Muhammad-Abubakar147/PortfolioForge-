@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Abubakar | Zoology Student | AI & Data Science Enthusiast</title>
+<meta name="description" content="Muhammad Abubakar — Final-year Zoology student at GCUF exploring Artificial Intelligence, Machine Learning, Data Science and Python Development at the intersection of biology and technology.">
+<meta name="keywords" content="Muhammad Abubakar, Zoology, AI, Machine Learning, Data Science, Python Developer, GCUF, Bioinformatics, Portfolio">
+<meta name="author" content="Muhammad Abubakar">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://muhammad-abubakar147.netlify.app">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Muhammad Abubakar | Zoology Student | AI & Data Science Enthusiast">
+<meta property="og:description" content="Exploring the intersection of Biological Sciences and Artificial Intelligence.">
+<meta property="og:image" content="assets/images/og-image.jpg">
+<meta property="og:url" content="https://muhammad-abubakar147.netlify.app">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muhammad Abubakar | Zoology × AI × Data Science">
+<meta name="twitter:description" content="Final-year Zoology student building expertise in AI, ML, Data Science & Python.">
+<meta name="twitter:image" content="assets/images/og-image.jpg">
+
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="logo" aria-label="Home">MA<span class="logo-dot"></span></a>
+
+    <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements</a></li>
+        <li><a href="#resume" class="nav-link" data-section="resume">Resume</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle light/dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+      </button>
+      <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section id="home" class="hero">
+    <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <div class="hero-container">
+      <div class="hero-left">
+        <p class="hero-tag reveal">BIOLOGICAL SCIENCES <span class="cross">×</span> ARTIFICIAL INTELLIGENCE</p>
+        <h1 class="hero-name reveal">Muhammad <span class="grad-text">Abubakar</span></h1>
+        <h2 class="hero-typing reveal" aria-live="polite">
+          <span id="typedText"></span><span class="cursor" aria-hidden="true">|</span>
+        </h2>
+        <p class="hero-intro reveal">
+          Final-year Zoology student exploring the intersection of biological sciences and
+          artificial intelligence, with a growing focus on Python, Data Science, Machine Learning,
+          and intelligent technologies.
+        </p>
+
+        <div class="hero-cta reveal">
+          <a href="#projects" class="btn btn-primary">Explore My Work</a>
+          <a href="assets/resume/resume.pdf" class="btn btn-outline" download>Download Resume</a>
+          <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+
+        <div class="hero-socials reveal">
+          <a href="https://github.com/Muhammad-Abubakar147" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.42 7.86 10.95.57.1.78-.25.78-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.78 2.71 1.26 3.37.97.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.08.78 2.18v3.24c0 .3.21.66.79.55A10.53 10.53 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/muhammadabubakar147/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a href="https://leetcode.com/u/Muhammad-Abubakar-afzal/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode Profile" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.48 0a1.37 1.37 0 0 0-.97.4L4.4 8.5a2.87 2.87 0 0 0 0 4.05l6.7 6.7a1.37 1.37 0 1 0 1.94-1.94l-6.32-6.32 8.05-8.05A1.37 1.37 0 0 0 13.48 0zM9.42 15.1a1.37 1.37 0 0 0 0 1.94l3.6 3.6a4.29 4.29 0 0 0 6.06 0l1.85-1.84a1.37 1.37 0 1 0-1.94-1.94l-1.85 1.85a1.55 1.55 0 0 1-2.19 0l-3.6-3.6a1.37 1.37 0 0 0-1.93 0z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="visual-stage" id="visualStage">
+          <div class="orbit-ring ring-1" aria-hidden="true"></div>
+          <div class="orbit-ring ring-2" aria-hidden="true"></div>
+
+          <div class="dna-helix" id="dnaHelix" aria-hidden="true"></div>
+
+          <svg class="neural-svg" viewBox="0 0 300 300" aria-hidden="true">
+            <g class="neural-lines" stroke="url(#gradLine)" stroke-width="1" fill="none">
+              <path d="M20 60 L110 100" /><path d="M20 220 L110 190" />
+              <path d="M280 50 L190 100" /><path d="M280 240 L190 190" />
+              <path d="M110 100 L150 150" /><path d="M110 190 L150 150" />
+              <path d="M190 100 L150 150" /><path d="M190 190 L150 150" />
+            </g>
+            <defs>
+              <linearGradient id="gradLine" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#22d3ee"/>
+                <stop offset="100%" stop-color="#8b5cf6"/>
+              </linearGradient>
+            </defs>
+            <g class="neural-nodes" fill="#22d3ee">
+              <circle cx="20" cy="60" r="4" class="node n1"/>
+              <circle cx="20" cy="220" r="4" class="node n2"/>
+              <circle cx="280" cy="50" r="4" class="node n3"/>
+              <circle cx="280" cy="240" r="4" class="node n4"/>
+              <circle cx="110" cy="100" r="3.5" class="node n5"/>
+              <circle cx="110" cy="190" r="3.5" class="node n6"/>
+              <circle cx="190" cy="100" r="3.5" class="node n7"/>
+              <circle cx="190" cy="190" r="3.5" class="node n8"/>
+              <circle cx="150" cy="150" r="5" class="node n9" fill="#8b5cf6"/>
+            </g>
+          </svg>
+
+          <div class="profile-frame">
+            <div class="profile-photo">
+              <img
+                src="assets/profile/profile.jpg"
+                alt="Muhammad Abubakar — Zoology student and AI enthusiast"
+                loading="eager"
+                onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Muhammad+Abubakar&background=0b1120&color=22d3ee&size=512&bold=true&font-size=0.38';">
+            </div>
+            <span class="scan-line" aria-hidden="true"></span>
+          </div>
+
+          <span class="floating-badge badge-bio" style="--d:0s">🧬 Biology</span>
+          <span class="floating-badge badge-ai" style="--d:1.2s">🤖 AI</span>
+          <span class="floating-badge badge-data" style="--d:2.4s">📊 Data</span>
+
+          <div class="identity-label">BIOLOGY <span>×</span> AI</div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+      <span class="mouse"><span class="wheel"></span></span> Scroll
+    </a>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="section about">
+    <div class="section-header reveal">
+      <span class="section-tag">Get to know me</span>
+      <h2 class="section-title">About Me</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="glass-panel molecule-panel">
+          <svg viewBox="0 0 200 200" class="molecule-svg" aria-hidden="true">
+            <g stroke="url(#gradLine2)" stroke-width="1.2" fill="none">
+              <circle cx="100" cy="100" r="70" stroke-dasharray="4 6"/>
+              <circle cx="100" cy="40" r="4" fill="#22d3ee"/>
+              <circle cx="160" cy="100" r="4" fill="#8b5cf6"/>
+              <circle cx="100" cy="160" r="4" fill="#22d3ee"/>
+              <circle cx="40" cy="100" r="4" fill="#8b5cf6"/>
+              <circle cx="100" cy="100" r="6" fill="#e5e7eb"/>
+              <line x1="100" y1="100" x2="100" y2="40"/>
+              <line x1="100" y1="100" x2="160" y2="100"/>
+              <line x1="100" y1="100" x2="100" y2="160"/>
+              <line x1="100" y1="100" x2="40" y2="100"/>
+            </g>
+            <defs>
+              <linearGradient id="gradLine2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#8b5cf6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+
+      <div class="about-content reveal">
+        <p>
+          I'm <strong>Muhammad Abubakar</strong>, a final-year <strong>Zoology / Biological Sciences student</strong>
+          at Government College University Faisalabad (GCUF). Alongside my academic foundation in biology,
+          I've been actively building technical skills in <strong>Python, Data Science, Machine Learning,
+          and Artificial Intelligence</strong>.
+        </p>
+        <p>
+          My goal is to explore how computational thinking and AI-driven tools can contribute to biological
+          and scientific problem-solving — bridging a traditionally life-sciences background with modern
+          data-driven technology.
+        </p>
+
+        <div class="about-highlights">
+          <div class="highlight-card tilt-card">
+            <span class="highlight-num">01</span>
+            <h3>Biological Foundation</h3>
+            <p>Building a strong base in Zoology and biological sciences through a structured BS program.</p>
+          </div>
+          <div class="highlight-card tilt-card">
+            <span class="highlight-num">02</span>
+            <h3>Computational Growth</h3>
+            <p>Continuously learning Python, Data Analysis, Machine Learning, and Deep Learning concepts.</p>
+          </div>
+          <div class="highlight-card tilt-card">
+            <span class="highlight-num">03</span>
+            <h3>Interdisciplinary Vision</h3>
+            <p>Working toward combining AI with biological sciences to approach problems from both angles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section id="education" class="section education">
+    <div class="section-header reveal">
+      <span class="section-tag">Academic path</span>
+      <h2 class="section-title">Education</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="glass-panel timeline-content">
+          <span class="timeline-year">2023 — 2027</span>
+          <h3>BS Zoology</h3>
+          <h4>Government College University Faisalabad (GCUF)</h4>
+          <p>Currently in the final year of a Bachelor's program in Zoology, building a strong foundation
+             in biological sciences while independently developing skills in AI, Machine Learning, and
+             Data Science.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="glass-panel timeline-content timeline-placeholder">
+          <span class="timeline-year">Earlier Education</span>
+          <h3>Intermediate / Matriculation</h3>
+          <p class="placeholder-note">Add your previous education details (institution, year, major) here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="section skills">
+    <div class="section-header reveal">
+      <span class="section-tag">Technical toolkit</span>
+      <h2 class="section-title">Skills</h2>
+    </div>
+
+    <!-- Programming -->
+    <h3 class="skills-subtitle reveal">Programming</h3>
+    <div class="skills-grid reveal">
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?python,code" alt="Python programming visual">
+        <div class="skill-info"><h4>Python</h4><span class="level">Intermediate</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?html,webdevelopment" alt="HTML web development visual">
+        <div class="skill-info"><h4>HTML</h4><span class="level">Intermediate</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?css,design" alt="CSS design visual">
+        <div class="skill-info"><h4>CSS</h4><span class="level">Intermediate</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?javascript,programming" alt="JavaScript programming visual">
+        <div class="skill-info"><h4>JavaScript</h4><span class="level">Beginner</span></div>
+      </div>
+    </div>
+
+    <!-- Data Science -->
+    <h3 class="skills-subtitle reveal">Data Science</h3>
+    <div class="skills-grid reveal">
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?data,numbers" alt="NumPy scientific computing visual">
+        <div class="skill-info"><h4>NumPy</h4><span class="level">Intermediate</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?dataanalysis,spreadsheet" alt="Pandas data analysis visual">
+        <div class="skill-info"><h4>Pandas</h4><span class="level">Intermediate</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?chart,graph" alt="Matplotlib data visualization visual">
+        <div class="skill-info"><h4>Matplotlib</h4><span class="level">Beginner</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?statistics,visualization" alt="Seaborn statistical visualization visual">
+        <div class="skill-info"><h4>Seaborn</h4><span class="level">Beginner</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?machinelearning,algorithm" alt="Scikit-Learn machine learning visual">
+        <div class="skill-info"><h4>Scikit-Learn</h4><span class="level">Beginner</span></div>
+      </div>
+    </div>
+
+    <!-- ML / AI -->
+    <h3 class="skills-subtitle reveal">Machine Learning &amp; AI</h3>
+    <div class="skills-grid reveal">
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?neuralnetwork,ai" alt="TensorFlow deep learning visual">
+        <div class="skill-info"><h4>TensorFlow</h4><span class="level">Learning</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?deeplearning,technology" alt="PyTorch deep learning visual">
+        <div class="skill-info"><h4>PyTorch</h4><span class="level">Learning</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?artificialintelligence,brain" alt="Keras artificial intelligence visual">
+        <div class="skill-info"><h4>Keras</h4><span class="level">Learning</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?computervision,camera" alt="OpenCV computer vision visual">
+        <div class="skill-info"><h4>OpenCV</h4><span class="level">Beginner</span></div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <h3 class="skills-subtitle reveal">Tools</h3>
+    <div class="skills-grid reveal">
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?git,versioncontrol" alt="Git version control visual">
+        <div class="skill-info"><h4>Git</h4><span class="level">Intermediate</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?github,developer" alt="GitHub collaboration visual">
+        <div class="skill-info"><h4>GitHub</h4><span class="level">Intermediate</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?coding,editor" alt="VS Code editor visual">
+        <div class="skill-info"><h4>VS Code</h4><span class="level">Intermediate</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?laptop,software" alt="PyCharm IDE visual">
+        <div class="skill-info"><h4>PyCharm</h4><span class="level">Beginner</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?cloud,computing" alt="Google Colab visual">
+        <div class="skill-info"><h4>Google Colab</h4><span class="level">Intermediate</span></div>
+      </div>
+      <div class="skill-card tilt-card">
+        <img class="skill-img" loading="lazy" src="https://source.unsplash.com/400x300/?notebook,research" alt="Jupyter Notebook visual">
+        <div class="skill-info"><h4>Jupyter Notebook</h4><span class="level">Intermediate</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="section projects">
+    <div class="section-header reveal">
+      <span class="section-tag">Selected work</span>
+      <h2 class="section-title">Projects</h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-img" style="background-image:url('https://source.unsplash.com/600x400/?artificialintelligence,network')"></div>
+        <div class="project-body">
+          <h3>How LLMs Work</h3>
+          <p>An educational project breaking down how Large Language Models process and generate text.</p>
+          <div class="tech-tags"><span>Python</span><span>NLP</span><span>AI Concepts</span></div>
+          <div class="project-links">
+            <a href="#" class="btn btn-sm btn-outline" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-img" style="background-image:url('https://source.unsplash.com/600x400/?wildlife,animals')"></div>
+        <div class="project-body">
+          <h3>Zoo Animal Classification &amp; Data Analysis</h3>
+          <p>A Zoology-meets-Data-Science project analyzing and classifying animal datasets.</p>
+          <div class="tech-tags"><span>Python</span><span>Pandas</span><span>Scikit-Learn</span></div>
+          <div class="project-links">
+            <a href="#" class="btn btn-sm btn-outline" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-img" style="background-image:url('https://source.unsplash.com/600x400/?machinelearning,data')"></div>
+        <div class="project-body">
+          <h3>Machine Learning Projects</h3>
+          <p>A collection of applied machine learning experiments and model-building exercises.</p>
+          <div class="tech-tags"><span>Python</span><span>Scikit-Learn</span><span>ML</span></div>
+          <div class="project-links">
+            <a href="#" class="btn btn-sm btn-outline" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-img" style="background-image:url('https://source.unsplash.com/600x400/?computervision,camera')"></div>
+        <div class="project-body">
+          <h3>OpenCV Projects</h3>
+          <p>Computer vision experiments exploring image processing and detection techniques.</p>
+          <div class="tech-tags"><span>Python</span><span>OpenCV</span></div>
+          <div class="project-links">
+            <a href="#" class="btn btn-sm btn-outline" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-img" style="background-image:url('https://source.unsplash.com/600x400/?python,programming')"></div>
+        <div class="project-body">
+          <h3>Python Projects</h3>
+          <p>A set of programming and automation projects showcasing core Python skills.</p>
+          <div class="tech-tags"><span>Python</span><span>Automation</span></div>
+          <div class="project-links">
+            <a href="#" class="btn btn-sm btn-outline" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-img" style="background-image:url('https://source.unsplash.com/600x400/?ecommerce,shopping')"></div>
+        <div class="project-body">
+          <h3>E-Commerce Website</h3>
+          <p>A modern, responsive e-commerce website front-end built with core web technologies.</p>
+          <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="project-links">
+            <a href="#" class="btn btn-sm btn-outline" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-img" style="background-image:url('https://source.unsplash.com/600x400/?mosque,islamic')"></div>
+        <div class="project-body">
+          <h3>Asma-ul-Husna</h3>
+          <p>An Islamic educational web project presenting the 99 Names of Allah.</p>
+          <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="project-links">
+            <a href="#" class="btn btn-sm btn-outline" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-img" style="background-image:url('https://source.unsplash.com/600x400/?code,experiment')"></div>
+        <div class="project-body">
+          <h3>Mini Projects</h3>
+          <p>Small experimental builds created while learning new tools, libraries, and concepts.</p>
+          <div class="tech-tags"><span>Python</span><span>JavaScript</span></div>
+          <div class="project-links">
+            <a href="#" class="btn btn-sm btn-outline" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= ACHIEVEMENTS ================= -->
+  <section id="achievements" class="section achievements">
+    <div class="section-header reveal">
+      <span class="section-tag">Milestones</span>
+      <h2 class="section-title">Achievements</h2>
+    </div>
+
+    <div class="achievements-grid">
+      <div class="achievement-card glass-panel tilt-card reveal">
+        <span class="ach-index">01</span>
+        <h3>Saylor Academy — CS105</h3>
+        <p>Completed Introduction to Python Programming coursework.</p>
+      </div>
+      <div class="achievement-card glass-panel tilt-card reveal">
+        <span class="ach-index">02</span>
+        <h3>Harvard CS50x</h3>
+        <p>Worked through CS50x problem sets and coding puzzles.</p>
+      </div>
+      <div class="achievement-card glass-panel tilt-card reveal">
+        <span class="ach-index">03</span>
+        <h3>UC Calico / UCLA Coding Challenge</h3>
+        <p>Participated in a university-level coding competition.</p>
+      </div>
+      <div class="achievement-card glass-panel tilt-card reveal">
+        <span class="ach-index">04</span>
+        <h3>GCUF Zoology Department</h3>
+        <p>Served as an Event Coordinator for departmental activities.</p>
+      </div>
+      <div class="achievement-card glass-panel tilt-card reveal">
+        <span class="ach-index">05</span>
+        <h3>AI in Healthcare Seminar</h3>
+        <p>Attended a seminar exploring the applications of AI in healthcare.</p>
+      </div>
+      <div class="achievement-card glass-panel tilt-card reveal">
+        <span class="ach-index">06</span>
+        <h3>Active GitHub Contributor</h3>
+        <p>Building and maintaining Python, ML, and AI learning projects on GitHub.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESUME ================= -->
+  <section id="resume" class="section resume">
+    <div class="section-header reveal">
+      <span class="section-tag">Curriculum vitae</span>
+      <h2 class="section-title">Resume</h2>
+    </div>
+
+    <div class="resume-card glass-panel reveal">
+      <div class="resume-icon" aria-hidden="true">
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <path d="M14 2v6h6"/><path d="M9 13h6M9 17h6M9 9h1"/>
+        </svg>
+      </div>
+      <div class="resume-info">
+        <h3>Muhammad Abubakar — Resume</h3>
+        <p>An up-to-date summary of my education, skills, and project work.</p>
+      </div>
+      <div class="resume-actions">
+        <a href="assets/resume/resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">View Resume</a>
+        <a href="assets/resume/resume.pdf" download class="btn btn-primary">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="section contact">
+    <div class="section-header reveal">
+      <span class="section-tag">Let's connect</span>
+      <h2 class="section-title">Contact</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p>Interested in AI, Data Science, or interdisciplinary collaboration between biology and technology?
+           Feel free to reach out — I'd love to connect.</p>
+        <ul class="contact-list">
+          <li><strong>University:</strong> Government College University Faisalabad</li>
+          <li><strong>Program:</strong> BS Zoology (2023–2027)</li>
+          <li><strong>Focus:</strong> AI · Data Science · Python Development</li>
+        </ul>
+      </div>
+
+      <form id="contactForm" class="contact-form glass-panel reveal" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Write your message..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+          <span class="btn-text">Send Message</span>
+        </button>
+        <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
+    <a href="#home" class="logo">MA<span class="logo-dot"></span></a>
+    <p class="footer-tagline">Zoology × Artificial Intelligence × Data Science</p>
+    <div class="footer-socials">
+      <a href="https://github.com/Muhammad-Abubakar147" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+      <a href="https://www.linkedin.com/in/muhammadabubakar147/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+      <a href="https://leetcode.com/u/Muhammad-Abubakar-afzal/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">LeetCode</a>
+    </div>
+    <p class="footer-copy">&copy; <span id="year"></span> Muhammad Abubakar. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- EmailJS CDN (only external lib genuinely needed for contact form) -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
