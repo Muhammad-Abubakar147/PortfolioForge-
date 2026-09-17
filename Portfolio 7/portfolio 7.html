@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Muhammad Abubakar — Data Science & AI Portfolio</title>
+    
+    <meta name="description" content="Muhammad Abubakar's personal portfolio. A BS Zoology student transitioning into Python, Data Science, Machine Learning, AI, and Computer Vision.">
+    <meta name="keywords" content="Muhammad Abubakar, Python, Data Science, Machine Learning, AI, Computer Vision, Portfolio">
+    <meta name="author" content="Muhammad Abubakar">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Muhammad Abubakar — Data Science & AI Portfolio">
+    <meta property="og:description" content="Discover the projects and skills of Muhammad Abubakar, a Data Science & AI enthusiast.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_WEBSITE_URL"> <!-- Replace with your actual domain -->
+    <meta property="og:image" content="YOUR_PREVIEW_IMAGE_URL"> <!-- Replace with a link to a preview image -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%A4%96%3C/text%3E%3C/svg%3E">
+
+    <style>
+        /* Modern CSS Reset */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; scroll-behavior: smooth; }
+        body { font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; font-size: 16px; background-color: var(--color-bg); color: var(--color-text); transition: background-color 0.3s, color 0.3s; }
+        a { color: var(--color-primary); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: var(--color-primary-hover); }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Lexend', sans-serif; font-weight: 600; line-height: 1.2; color: var(--color-heading); }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; position: relative; }
+        h2::after { content: ''; display: block; width: 50px; height: 4px; background-color: var(--color-primary); margin-top: 0.5rem; border-radius: 2px; }
+        section { padding: 100px 0; max-width: 1200px; margin: 0 auto; width: 90%; }
+        .container { max-width: 1200px; margin: 0 auto; width: 90%; }
+
+        /* THEME VARIABLES */
+        :root.dark {
+            --color-bg: #03001C;
+            --color-bg-secondary: #0a0724;
+            --color-text: #c7d2fe;
+            --color-heading: #e0e7ff;
+            --color-primary: #3b82f6;
+            --color-primary-hover: #60a5fa;
+            --color-glass: rgba(17, 24, 39, 0.5);
+            --color-glass-border: rgba(96, 165, 250, 0.2);
+            --color-shadow: rgba(0, 0, 0, 0.2);
+            --color-glow: rgba(59, 130, 246, 0.3);
+        }
+        :root.light {
+            --color-bg: #f3f4f6;
+            --color-bg-secondary: #ffffff;
+            --color-text: #374151;
+            --color-heading: #111827;
+            --color-primary: #2563eb;
+            --color-primary-hover: #3b82f6;
+            --color-glass: rgba(255, 255, 255, 0.5);
+            --color-glass-border: rgba(37, 99, 235, 0.2);
+            --color-shadow: rgba(0, 0, 0, 0.1);
+            --color-glow: rgba(37, 99, 235, 0.2);
+        }
+
+        /* UTILITY CLASSES */
+        .btn { display: inline-block; padding: 12px 24px; font-weight: 600; border-radius: 8px; transition: all 0.3s ease; border: 2px solid transparent; cursor: pointer; }
+        .btn-primary { background-color: var(--color-primary); color: white; }
+        .btn-primary:hover { background-color: var(--color-primary-hover); transform: translateY(-3px); box-shadow: 0 10px 20px var(--color-glow); }
+        .btn-secondary { border: 2px solid var(--color-primary); color: var(--color-primary); }
+        .btn-secondary:hover { background-color: var(--color-primary); color: white; transform: translateY(-3px); box-shadow: 0 10px 20px var(--color-glow); }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* NAVIGATION */
+        #main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out, padding 0.3s;
+        }
+        #main-nav.scrolled {
+            padding: 0.5rem 0;
+            background-color: var(--color-glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px var(--color-shadow);
+            border-bottom: 1px solid var(--color-glass-border);
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; width: 90%; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--color-heading); }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { font-weight: 500; color: var(--color-text); position: relative; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; background-color: var(--color-primary); bottom: -5px; left: 50%; transform: translateX(-50%); transition: width 0.3s; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-actions { display: flex; align-items: center; gap: 1rem; }
+        .theme-toggle { background: none; border: none; color: var(--color-text); cursor: pointer; font-size: 1.5rem; transition: transform 0.3s; }
+        .theme-toggle:hover { transform: rotate(15deg) scale(1.1); }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--color-text); font-size: 2rem; cursor: pointer; z-index: 1001; }
+        
+        /* HERO SECTION */
+        #hero {
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+        #hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 90%;
+            animation: text-reveal 1s ease-out forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+        @keyframes text-reveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-content h1 { font-weight: 800; letter-spacing: -2px; }
+        .hero-content .headline { font-size: clamp(1.5rem, 3vw, 2.5rem); color: var(--color-primary); margin: 0.5rem 0 1rem; font-weight: 700; }
+        .hero-content .subheadline { margin-bottom: 1.5rem; color: var(--color-text); font-size: 1.1rem; }
+        .hero-content p { max-width: 600px; margin-bottom: 2rem; font-size: 1.1rem; }
+        .hero-buttons { display: flex; gap: 1rem; margin-bottom: 2rem; }
+        .hero-socials { display: flex; gap: 1.5rem; }
+        .hero-socials a { font-size: 1.8rem; color: var(--color-text); transition: color 0.3s, transform 0.3s; }
+        .hero-socials a:hover { color: var(--color-primary); transform: scale(1.2); }
+
+        /* ABOUT SECTION */
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-text p { margin-bottom: 1rem; }
+        .about-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .detail-card {
+            background: var(--color-glass);
+            border: 1px solid var(--color-glass-border);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            transition: all 0.3s;
+        }
+        .detail-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px var(--color-glow); border-color: var(--color-primary); }
+        .detail-card h4 { font-size: 0.9rem; color: var(--color-primary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        .detail-card p { font-size: 1.1rem; font-weight: 600; color: var(--color-heading); margin: 0; }
+
+        /* SKILLS SECTION */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .skill-category {
+            background: var(--color-glass);
+            border: 1px solid var(--color-glass-border);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+        .skill-category h3 { margin-bottom: 1.5rem; color: var(--color-primary); }
+        .skill-list { list-style: none; display: flex; flex-wrap: wrap; gap: 1rem; }
+        .skill-item {
+            background: rgba(0,0,0,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+        }
+        .skill-item:hover { border-color: var(--color-primary); transform: scale(1.05); }
+        .skill-item span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 var(--color-glow); } 70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); } 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); } }
+
+        /* PROJECTS SECTION */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .project-card {
+            background: var(--color-glass);
+            border: 1px solid var(--color-glass-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(5px);
+        }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 30px var(--color-glow); }
+        .project-content { padding: 1.5rem; }
+        .project-card h3 { margin-bottom: 0.5rem; font-size: 1.5rem; }
+        .project-description { font-size: 0.95rem; margin-bottom: 1rem; min-height: 80px; }
+        .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .tech-tag { background: rgba(59, 130, 246, 0.1); color: var(--color-primary); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; }
+        .project-links { display: flex; gap: 1rem; }
+        .project-links a { color: var(--color-text); display: flex; align-items: center; gap: 0.5rem; font-weight: 500; }
+        .project-links a:hover { color: var(--color-primary); }
+        .project-links a svg { width: 20px; height: 20px; }
+
+        /* LEARNING JOURNEY */
+        .journey-timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .journey-timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: var(--color-glass-border);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+            border-radius: 3px;
+        }
+        .journey-item { padding: 10px 40px; position: relative; width: 50%; }
+        .journey-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12.5px;
+            background-color: var(--color-bg);
+            border: 4px solid var(--color-primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            transition: all 0.3s;
+        }
+        .journey-item.left { left: 0; }
+        .journey-item.right { left: 50%; }
+        .journey-item.left::before { content: " "; height: 0; position: absolute; top: 22px; width: 0; z-index: 1; right: 30px; border: medium solid var(--color-glass-border); border-width: 10px 0 10px 10px; border-color: transparent transparent transparent var(--color-glass-border); }
+        .journey-item.right::before { content: " "; height: 0; position: absolute; top: 22px; width: 0; z-index: 1; left: 30px; border: medium solid var(--color-glass-border); border-width: 10px 10px 10px 0; border-color: transparent var(--color-glass-border) transparent transparent; }
+        .journey-item.right::after { left: -12.5px; }
+        .journey-content { padding: 20px; background: var(--color-glass); border-radius: 8px; position: relative; border: 1px solid transparent; transition: all 0.3s; }
+        .journey-item:hover .journey-content { border-color: var(--color-primary); }
+        .journey-item:hover::after { background-color: var(--color-primary); box-shadow: 0 0 15px var(--color-glow); }
+        .journey-content h3 { margin: 0; font-size: 1.2rem; color: var(--color-heading); }
+
+        /* ACHIEVEMENTS */
+        .achievements-list { display: grid; gap: 1rem; }
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: var(--color-glass);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--color-glass-border);
+            transition: all 0.3s;
+        }
+        .achievement-item:hover { border-color: var(--color-primary); transform: translateX(5px); }
+        .achievement-icon { font-size: 2rem; color: var(--color-primary); }
+        .achievement-text { font-weight: 500; }
+
+        /* GITHUB & RESUME CTA */
+        #github, #resume { text-align: center; }
+        .cta-container {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.05));
+            padding: 4rem;
+            border-radius: 20px;
+            border: 1px solid var(--color-glass-border);
+            backdrop-filter: blur(5px);
+        }
+        .cta-container h2 { text-align: center; margin-bottom: 1rem; }
+        .cta-container h2::after { margin-left: auto; margin-right: auto; }
+        .cta-container p { max-width: 600px; margin: 0 auto 2rem; }
+        .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        #github-username { font-family: monospace; font-size: 1.2rem; background: var(--color-bg-secondary); padding: 0.5rem 1rem; border-radius: 6px; display: inline-block; margin-bottom: 2rem; }
+        #github-graph { margin: 2rem auto; max-width: 800px; }
+        .gh-grid { display: grid; grid-template-columns: repeat(52, 1fr); gap: 3px; }
+        .gh-cell { width: 100%; padding-bottom: 100%; background-color: var(--color-glass); border-radius: 2px; }
+
+        /* CONTACT SECTION */
+        .contact-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; }
+        .contact-info h3 { margin-bottom: 1rem; }
+        .contact-info p { margin-bottom: 2rem; }
+        .contact-links a { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; font-size: 1.1rem; }
+        .contact-links a:hover { color: var(--color-primary); }
+        .contact-links svg { width: 24px; height: 24px; }
+        .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
+        .form-group { position: relative; }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--color-glass);
+            border: 1px solid var(--color-glass-border);
+            border-radius: 8px;
+            color: var(--color-text);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 10px var(--color-glow);
+        }
+        .contact-form textarea { resize: vertical; min-height: 150px; }
+        .contact-form button { align-self: flex-start; }
+
+        /* FOOTER */
+        footer { padding: 2rem 0; text-align: center; color: var(--color-text); font-size: 0.9rem; border-top: 1px solid var(--color-glass-border); }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .about-content, .contact-container { grid-template-columns: 1fr; }
+            .about-text { text-align: center; }
+            .about-text h2::after { margin: 0.5rem auto; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 60%;
+                height: 100vh;
+                background-color: var(--color-bg-secondary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 3rem;
+                transition: right 0.5s ease-in-out;
+                box-shadow: -5px 0 15px var(--color-shadow);
+            }
+            .nav-links.active { right: 0; }
+            .mobile-menu-btn { display: block; }
+            .journey-timeline::after { left: 31px; }
+            .journey-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .journey-item.left::before, .journey-item.right::before { left: 60px; border-width: 10px 10px 10px 0; border-color: transparent var(--color-glass-border) transparent transparent; }
+            .journey-item.left::after, .journey-item.right::after { left: 20px; }
+            .journey-item.right { left: 0%; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content .headline { font-size: 1.5rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .cta-container { padding: 2rem; }
+            .about-details { grid-template-columns: 1fr; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .btn:hover { transform: none; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 3D Background Canvas -->
+    <div id="hero-canvas"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">MA</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+                    <!-- Icon will be set by JS -->
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation menu">
+                    &#9776; <!-- Hamburger Icon -->
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1 id="hero-name"></h1>
+                <p class="headline" id="hero-headline"></p>
+                <p class="subheadline" id="hero-subheadline"></p>
+                <p id="hero-intro"></p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#" class="btn btn-secondary" id="hero-resume-btn" target="_blank" rel="noopener noreferrer">Download Resume</a>
+                </div>
+                <div class="hero-socials" id="hero-socials">
+                    <!-- Social links will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="fade-in">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Me</h2>
+                        <p id="about-p1"></p>
+                        <p id="about-p2"></p>
+                        <p id="about-p3"></p>
+                    </div>
+                    <div class="about-details" id="about-details-grid">
+                        <!-- Detail cards will be injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="fade-in">
+            <div class="container">
+                <h2>Skills Ecosystem</h2>
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Skill categories will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="fade-in">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Project cards will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Journey Section -->
+        <section id="journey" class="fade-in">
+            <div class="container">
+                <h2>Learning Journey</h2>
+                <div class="journey-timeline" id="journey-timeline">
+                    <!-- Journey items will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="fade-in">
+            <div class="container">
+                <h2>Achievements & Highlights</h2>
+                <div class="achievements-list" id="achievements-list">
+                    <!-- Achievements will be injected by JS -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- GitHub Section -->
+        <section id="github" class="fade-in">
+            <div class="container">
+                <div class="cta-container">
+                    <h2>GitHub Profile</h2>
+                    <p id="github-username"></p>
+                    <div id="github-graph">
+                        <p>Futuristic Contribution-Style Visual</p>
+                        <div class="gh-grid" id="gh-grid-container">
+                          <!-- GitHub-like cells will be generated by JS -->
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#" id="github-profile-btn" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View GitHub Profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume CTA Section -->
+        <section id="resume" class="fade-in">
+            <div class="container">
+                <div class="cta-container">
+                    <h2>Let's Build Something Intelligent</h2>
+                    <p>I'm continuously learning and building projects in Python, Data Science, Machine Learning, AI, and Computer Vision.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary" id="resume-download-btn" target="_blank" rel="noopener noreferrer">Download Resume</a>
+                        <a href="#" class="btn btn-secondary" id="resume-github-btn" target="_blank" rel="noopener noreferrer">View GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="fade-in">
+            <div class="container">
+                <h2>Let's Connect</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out to me.</p>
+                        <div class="contact-links" id="contact-links">
+                            <!-- Contact links will be injected by JS -->
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Muhammad Abubakar. Designed & Built with a futuristic vision.</p>
+        </div>
+    </footer>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Main JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // =================================================================
+        // 1. CONFIGURATION OBJECT - UPDATE YOUR DETAILS HERE
+        // =================================================================
+        const portfolioData = {
+            // Hero Section
+            name: "Muhammad Abubakar",
+            headline: "Data Science & AI Enthusiast",
+            subheadline: "Python Developer • Data Science • Machine Learning • Computer Vision",
+            intro: "I'm a BS Zoology student at Government College University Faisalabad, building my skills in Python, Data Science, Machine Learning, AI, and Computer Vision. I enjoy turning ideas and data into practical projects.",
+            
+            // Social & Contact
+            email: "YOUR_EMAIL", // Replace with your email
+            githubUser: "Muhammad-Abubakar147",
+            linkedinUser: "YOUR_LINKEDIN_USERNAME", // Replace with your LinkedIn username
+            
+            // URLs
+            resumeURL: "YOUR_RESUME_URL", // Replace with your resume URL
+            
+            // About Section
+            about: {
+                p1: "I'm Muhammad Abubakar, a BS Zoology student at Government College University Faisalabad. Alongside my academic journey, I've developed a strong interest in programming, Data Science, Machine Learning, Artificial Intelligence, and Computer Vision.",
+                p2: "My current learning journey focuses heavily on Python and its Data Science ecosystem, including NumPy, Pandas, Matplotlib, Scikit-Learn, TensorFlow, and PyTorch.",
+                p3: "I believe the combination of scientific knowledge and modern technology can create powerful solutions.",
+                details: [
+                    { title: "Degree", value: "BS Zoology" },
+                    { title: "University", value: "Government College University Faisalabad" },
+                    { title: "Session", value: "2023–2027" },
+                    { title: "CGPA", value: "3.33 / 4.00" },
+                ]
+            },
+            
+            // Skills Section
+            skills: [
+                {
+                    category: "Programming",
+                    list: ["Python", "HTML", "CSS"]
+                },
+                {
+                    category: "Data Science",
+                    list: ["NumPy", "Pandas", "Matplotlib", "Seaborn", "Scikit-Learn"]
+                },
+                {
+                    category: "Machine Learning / AI",
+                    list: ["TensorFlow", "PyTorch"]
+                },
+                {
+                    category: "Computer Vision",
+                    list: ["OpenCV", "YOLO", "MediaPipe"]
+                },
+                {
+                    category: "Tools",
+                    list: ["Git", "GitHub", "VS Code", "Jupyter Notebook", "Google Colab"]
+                }
+            ],
+            
+            // Projects Section
+            projects: [
+                {
+                    title: "Zoo Animal Classification & Data Analysis",
+                    description: "A project combining my Zoology background with Data Science/ML to classify animals and analyze zoological data.",
+                    tech: ["Python", "Pandas", "Scikit-Learn", "TensorFlow"],
+                    github: "YOUR_GITHUB_PROJECT_URL",
+                    live: ""
+                },
+                {
+                    title: "Sales Prediction Model",
+                    description: "A Machine Learning model developed to predict sales figures based on historical data and various market factors.",
+                    tech: ["Python", "Scikit-Learn", "Pandas", "Jupyter"],
+                    github: "YOUR_GITHUB_PROJECT_URL",
+                    live: ""
+                },
+                {
+                    title: "Image Classifier CNN",
+                    description: "A Convolutional Neural Network built with TensorFlow/Keras for classifying images from a dataset.",
+                    tech: ["Python", "TensorFlow", "Keras", "NumPy"],
+                    github: "YOUR_GITHUB_PROJECT_URL",
+                    live: ""
+                },
+                {
+                    title: "Face, Eye & Smile Detection",
+                    description: "A Computer Vision project using Haar Cascades in OpenCV to detect faces, eyes, and smiles in real-time video.",
+                    tech: ["Python", "OpenCV", "Haar Cascades"],
+                    github: "YOUR_GITHUB_PROJECT_URL",
+                    live: ""
+                },
+                {
+                    title: "NLP Sentiment Analyzer",
+                    description: "A Natural Language Processing project to analyze text and determine its sentiment (positive, negative, neutral).",
+                    tech: ["Python", "NLTK", "TextBlob"],
+                    github: "YOUR_GITHUB_PROJECT_URL",
+                    live: ""
+                },
+                {
+                    title: "Student Manager App",
+                    description: "A Python-based desktop application for managing student records, demonstrating fundamental programming concepts.",
+                    tech: ["Python", "Tkinter"],
+                    github: "YOUR_GITHUB_PROJECT_URL",
+                    live: ""
+                },
+            ],
+
+            // Learning Journey
+            journey: [
+                "Programming Fundamentals", "Python", "NumPy & Pandas", "Data Visualization",
+                "Machine Learning", "Deep Learning", "Computer Vision", "AI"
+            ],
+
+            // Achievements
+            achievements: [
+                { icon: "🏆", text: "Saylor Academy Python Certificate — 88.94%" },
+                { icon: "🧩", text: "Harvard CS50X Puzzle Completion" },
+                { icon: "💻", text: "Advent of Code Participation" },
+                { icon: "🚀", text: "Continuous Data Science / AI learning and project building" },
+                { icon: "📈", text: "Consistent learning activity on GitHub" },
+            ]
+        };
+
+        // =================================================================
+        // 2. DATA INJECTION
+        // =================================================================
+
+        function populateContent() {
+            const githubURL = `https://github.com/${portfolioData.githubUser}`;
+            const linkedinURL = `https://linkedin.com/in/${portfolioData.linkedinUser}`;
+
+            // Hero
+            document.getElementById('hero-name').textContent = portfolioData.name;
+            document.getElementById('hero-headline').textContent = portfolioData.headline;
+            document.getElementById('hero-subheadline').textContent = portfolioData.subheadline;
+            document.getElementById('hero-intro').textContent = portfolioData.intro;
+            document.getElementById('hero-resume-btn').href = portfolioData.resumeURL;
+            document.getElementById('hero-socials').innerHTML = `
+                <a href="${githubURL}" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">${getIcon('github')}</a>
+                <a href="${linkedinURL}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">${getIcon('linkedin')}</a>
+            `;
+            
+            // About
+            document.getElementById('about-p1').textContent = portfolioData.about.p1;
+            document.getElementById('about-p2').textContent = portfolioData.about.p2;
+            document.getElementById('about-p3').textContent = portfolioData.about.p3;
+            const aboutDetailsGrid = document.getElementById('about-details-grid');
+            portfolioData.about.details.forEach(detail => {
+                aboutDetailsGrid.innerHTML += `
+                    <div class="detail-card">
+                        <h4>${detail.title}</h4>
+                        <p>${detail.value}</p>
+                    </div>
+                `;
+            });
+            
+            // Skills
+            const skillsGrid = document.getElementById('skills-grid');
+            portfolioData.skills.forEach(category => {
+                skillsGrid.innerHTML += `
+                    <div class="skill-category">
+                        <h3>${category.category}</h3>
+                        <ul class="skill-list">
+                            ${category.list.map(skill => `
+                                <li class="skill-item">
+                                    <span></span>
+                                    ${skill}
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            });
+            
+            // Projects
+            const projectsGrid = document.getElementById('projects-grid');
+            portfolioData.projects.forEach(project => {
+                projectsGrid.innerHTML += `
+                    <div class="project-card" data-tilt>
+                        <div class="project-content">
+                            <h3>${project.title}</h3>
+                            <p class="project-description">${project.description}</p>
+                            <div class="project-tech">
+                                ${project.tech.map(tag => `<span class="tech-tag">${tag}</span>`).join('')}
+                            </div>
+                            <div class="project-links">
+                                <a href="${project.github === 'YOUR_GITHUB_PROJECT_URL' ? '#' : project.github}" target="_blank" rel="noopener noreferrer" class="${project.github === 'YOUR_GITHUB_PROJECT_URL' ? 'disabled-link' : ''}">
+                                    ${getIcon('github')} GitHub
+                                </a>
+                                ${project.live ? `
+                                <a href="${project.live}" target="_blank" rel="noopener noreferrer">
+                                    ${getIcon('link')} Live Demo
+                                </a>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Learning Journey
+            const journeyTimeline = document.getElementById('journey-timeline');
+            portfolioData.journey.forEach((item, index) => {
+                const side = index % 2 === 0 ? 'left' : 'right';
+                journeyTimeline.innerHTML += `
+                    <div class="journey-item ${side} fade-in">
+                        <div class="journey-content">
+                            <h3>${item}</h3>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Achievements
+            const achievementsList = document.getElementById('achievements-list');
+            portfolioData.achievements.forEach(item => {
+                achievementsList.innerHTML += `
+                    <div class="achievement-item">
+                        <span class="achievement-icon">${item.icon}</span>
+                        <p class="achievement-text">${item.text}</p>
+                    </div>
+                `;
+            });
+
+            // GitHub & Resume
+            document.getElementById('github-username').textContent = `@${portfolioData.githubUser}`;
+            document.getElementById('github-profile-btn').href = githubURL;
+            document.getElementById('resume-download-btn').href = portfolioData.resumeURL;
+            document.getElementById('resume-github-btn').href = githubURL;
+
+            // Contact
+            const contactLinks = document.getElementById('contact-links');
+            contactLinks.innerHTML = `
+                <a href="${linkedinURL}" target="_blank" rel="noopener noreferrer">${getIcon('linkedin')} LinkedIn</a>
+                <a href="${githubURL}" target="_blank" rel="noopener noreferrer">${getIcon('github')} GitHub</a>
+                <a href="mailto:${portfolioData.email}">${getIcon('email')} Email</a>
+            `;
+        }
+
+        // =================================================================
+        // 3. 3D HERO BACKGROUND (THREE.JS)
+        // =================================================================
+        function initThreeJS() {
+            const container = document.getElementById('hero-canvas');
+            if (!container) return;
+
+            let scene, camera, renderer, particles, lines, rotatingObject;
+            const mouse = new THREE.Vector2();
+
+            const isMobile = window.innerWidth < 768;
+            const particleCount = isMobile ? 2000 : 5000;
+            const lineCount = isMobile ? 10 : 30;
+
+            // Scene
+            scene = new THREE.Scene();
+            
+            // Camera
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 5;
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            container.appendChild(renderer.domElement);
+
+            // Particles
+            const vertices = [];
+            for (let i = 0; i < particleCount; i++) {
+                const x = (Math.random() - 0.5) * 20;
+                const y = (Math.random() - 0.5) * 20;
+                const z = (Math.random() - 0.5) * 20;
+                vertices.push(x, y, z);
+            }
+            const geometry = new THREE.BufferGeometry();
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            const material = new THREE.PointsMaterial({
+                color: 0x3b82f6,
+                size: 0.02,
+                transparent: true,
+                blending: THREE.AdditiveBlending
+            });
+            particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+
+            // Neural Lines
+            const lineGeometry = new THREE.BufferGeometry();
+            const linePositions = [];
+            const lineIndices = [];
+            const points = geometry.attributes.position.array;
+            for(let i=0; i<lineCount; i++) {
+                const start = Math.floor(Math.random() * particleCount);
+                const end = Math.floor(Math.random() * particleCount);
+                linePositions.push(points[start*3], points[start*3+1], points[start*3+2]);
+                linePositions.push(points[end*3], points[end*3+1], points[end*3+2]);
+            }
+            lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+            const lineMaterial = new THREE.LineBasicMaterial({
+                color: 0x3b82f6,
+                transparent: true,
+                opacity: 0.1
+            });
+            lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+            scene.add(lines);
+
+            // Rotating Object
+            const icoGeometry = new THREE.IcosahedronGeometry(0.5, 0);
+            const wireframe = new THREE.WireframeGeometry(icoGeometry);
+            const lineMaterial2 = new THREE.LineBasicMaterial({
+                color: 0x60a5fa,
+                linewidth: 2
+            });
+            rotatingObject = new THREE.LineSegments(wireframe, lineMaterial2);
+            scene.add(rotatingObject);
+
+            // Event Listeners
+            window.addEventListener('resize', onWindowResize);
+            document.addEventListener('mousemove', onMouseMove);
+
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+
+            function onMouseMove(event) {
+                mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            }
+
+            // Animation Loop
+            function animate() {
+                requestAnimationFrame(animate);
+                const time = Date.now() * 0.0001;
+
+                particles.rotation.y = time * 0.5;
+                
+                rotatingObject.rotation.x += 0.002;
+                rotatingObject.rotation.y += 0.003;
+                
+                camera.position.x += (mouse.x * 0.5 - camera.position.x) * 0.05;
+                camera.position.y += (-mouse.y * 0.5 - camera.position.y) * 0.05;
+                camera.lookAt(scene.position);
+
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+
+
+        // =================================================================
+        // 4. UI & INTERACTIVITY
+        // =================================================================
+
+        function initInteractivity() {
+            // Navbar scroll effect
+            const nav = document.getElementById('main-nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? '&times;' : '&#9776;';
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => navLinks.classList.remove('active'));
+            });
+
+            // Theme toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const sunIcon = '☀️';
+            const moonIcon = '🌙';
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.className = currentTheme;
+            themeToggle.innerHTML = currentTheme === 'dark' ? sunIcon : moonIcon;
+
+            themeToggle.addEventListener('click', () => {
+                let theme = document.documentElement.className === 'dark' ? 'light' : 'dark';
+                document.documentElement.className = theme;
+                localStorage.setItem('theme', theme);
+                themeToggle.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
+            });
+
+            // Scroll reveal animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+            
+            // Active nav link on scroll
+            const sections = document.querySelectorAll('section');
+            const navLinksA = document.querySelectorAll('#nav-links a');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                navLinksA.forEach(a => {
+                    a.classList.remove('active');
+                    if (a.getAttribute('href').substring(1) === current) {
+                        a.classList.add('active');
+                    }
+                });
+            });
+
+            // Contact form handler
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert("Thank you for your message! This is a demo form. Form submission functionality is not configured yet.");
+                contactForm.reset();
+            });
+
+            // GitHub contribution graph visual
+            const ghGrid = document.getElementById('gh-grid-container');
+            const totalCells = 52 * 7; // 52 weeks
+            for(let i=0; i < totalCells; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('gh-cell');
+                const intensity = Math.random();
+                if(intensity > 0.3) { // 70% chance of being active
+                   cell.style.backgroundColor = `rgba(59, 130, 246, ${Math.random() * 0.8 + 0.2})`;
+                }
+                ghGrid.appendChild(cell);
+            }
+            
+            // Vanilla-tilt.js integration
+            const tiltElements = document.querySelectorAll("[data-tilt]");
+            if(tiltElements.length > 0) {
+                // Check if screen is not touch-based and wide enough
+                if (!('ontouchstart' in window) && window.innerWidth > 1024) {
+                    const script = document.createElement('script');
+                    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js';
+                    script.onload = () => {
+                        VanillaTilt.init(tiltElements, {
+                            max: 15,
+                            speed: 400,
+                            glare: true,
+                            "max-glare": 0.2
+                        });
+                    };
+                    document.body.appendChild(script);
+                }
+            }
+        }
+        
+        // =================================================================
+        // 5. HELPER FUNCTIONS
+        // =================================================================
+        
+        function getIcon(name) {
+            const icons = {
+                github: `<svg fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>`,
+                linkedin: `<svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>`,
+                email: `<svg fill="currentColor" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l9.518 7.713 9.518-7.713v11.817h-19.036z"/></svg>`,
+                link: `<svg fill="currentColor" viewBox="0 0 24 24"><path d="M13.293 8.707l-.02-.02 4.598-4.598c1.562-1.562 4.095-1.562 5.657 0 1.562 1.562 1.562 4.095 0 5.657l-4.598 4.598-.02.02-1.414-1.414.02-.02 4.598-4.598c.781-.781.781-2.047 0-2.828-.781-.781-2.047-.781-2.828 0l-4.598 4.598.02.02-1.414 1.414zm-9.196 6.586l4.598 4.598c1.562 1.562 4.095 1.562 5.657 0 1.562-1.562 1.562-4.095 0-5.657l-4.598-4.598-1.414 1.414 4.598 4.598c.781.781.781 2.047 0 2.828-.781.781-2.047.781-2.828 0l-4.598-4.598-1.414 1.414zm6.482-3.172l-1.414 1.414-2.828-2.828-1.414 1.414-3.536-3.536 1.414-1.414 2.828 2.828 1.414-1.414 3.536 3.536z"/></svg>`
+            };
+            return icons[name] || '';
+        }
+
+        // =================================================================
+        // 6. INITIALIZATION
+        // =================================================================
+        populateContent();
+        initThreeJS();
+        initInteractivity();
+    });
+    </script>
+</body>
+</html>
