@@ -77,3 +77,31 @@ PortfolioForge is intentionally built using simple and widely supported web tech
 No complicated framework is required.
 
 ---
+# 📂 Project Structure
+
+```text
+PortfolioForge/
+│
+├── index.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+├── assets/
+│   │
+│   ├── images/
+│   │
+│   ├── profile/
+│   │
+│   ├── projects/
+│   │
+│   └── resume/
+│       └── resume.pdf
+│
+├── favicon.ico
+├── robots.txt
+├── sitemap.xml
+└── README.md
