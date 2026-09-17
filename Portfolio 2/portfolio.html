@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Muhammad Abubakar | AI & Data Science Portfolio</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0c12;
+            color: #eef2ff;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+            transition: background 0.2s ease;
+        }
+
+        /* Dark mode is default ON — we keep it consistent, but provide a toggle if needed, though default dark */
+        :root {
+            --bg-primary: #0a0c12;
+            --bg-card: #111827;
+            --border-light: #1f2a3e;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e6;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --glow: rgba(59,130,246,0.2);
+        }
+
+        body.light {
+            --bg-primary: #f8fafc;
+            --bg-card: #ffffff;
+            --border-light: #e2e8f0;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --accent: #2563eb;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 1.8rem;
+        }
+
+        /* Glassmorphism / soft UI elements */
+        .card, .skill-category, .contact-wrapper, nav, .hero-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            backdrop-filter: blur(0px);
+            transition: all 0.3s ease;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1rem 1.8rem;
+            border-radius: 2rem;
+            margin: 1rem 0 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #3b82f6, #a5f3fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: var(--border-light);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero section: image left + text right */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            margin: 2rem 0 3rem;
+        }
+
+        .hero-image {
+            flex: 0.9;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-pic {
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.5);
+            border: 3px solid var(--accent);
+            overflow: hidden;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: transform 0.4s ease;
+        }
+
+        .profile-pic img:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            background: rgba(59,130,246,0.15);
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        body.light .hero-content h1 {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            -webkit-background-clip: text;
+        }
+
+        .hero-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: var(--text-secondary);
+        }
+
+        .hero-desc {
+            color: var(--text-secondary);
+            margin: 1rem 0 1.5rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            background: var(--bg-card);
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* sections */
+        .section-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-heading:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        /* Skills categories grid */
+        .skills-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 1rem 0 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border-radius: 1.6rem;
+            padding: 1.5rem 1.8rem;
+            border: 1px solid var(--border-light);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -12px rgba(0,0,0,0.3);
+        }
+
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-primary);
+        }
+
+        .category-title i {
+            color: var(--accent);
+            font-size: 1.6rem;
+        }
+
+        .skills-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-item {
+            background: rgba(59,130,246,0.1);
+            border: 1px solid var(--border-light);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            color: var(--text-primary);
+        }
+
+        .skill-item i {
+            font-size: 1rem;
+            color: var(--accent);
+        }
+
+        .skill-item:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: scale(1.02);
+        }
+
+        .skill-item:hover i {
+            color: white;
+        }
+
+        /* Achievements cards */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 1.5rem;
+            padding: 1.8rem;
+            border: 1px solid var(--border-light);
+            transition: all 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.4);
+        }
+
+        .card-icon {
+            font-size: 2.2rem;
+            background: rgba(59,130,246,0.15);
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        /* Contact section */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: var(--bg-card);
+            border-radius: 2rem;
+            padding: 2rem;
+            margin: 1.5rem 0 3rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info p {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .contact-form {
+            flex: 1.2;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 1.2rem;
+            font-family: inherit;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--glow);
+        }
+
+        .submit-btn {
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 2rem;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-hover);
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-light);
+            margin-top: 1rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 860px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-title {
+                text-align: left;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+            .section-heading:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .section-heading {
+                display: block;
+                text-align: center;
+            }
+            .profile-pic {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">⚡ M.Abubakar</div>
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#skills">Skills</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Light/Dark mode"><i class="fas fa-sun"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section: image left, content right -->
+    <div class="hero" id="home">
+        <div class="hero-image">
+            <div class="profile-pic">
+                <img src="https://ui-avatars.com/api/?background=1e293b&color=3b82f6&rounded=true&size=280&bold=true&name=Muhammad+Abubakar" alt="Muhammad Abubakar">
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-brain"></i> Data Scientist & AI enthusiast</div>
+            <h1>Muhammad Abubakar</h1>
+            <div class="hero-title">Zoology 🧬 → AI & Data Science | ML | Deep Learning</div>
+            <p class="hero-desc">
+                I'm a Zoology student with a fierce passion for Data Science 📊, Machine Learning 🤖, and Deep Learning 🧠. 
+                Experienced in Python & data libraries (NumPy, Pandas, Matplotlib, Seaborn). I merge biological science with 
+                data-driven AI to solve real-world problems. Also love teaching 👨‍🏫 and simplifying tech.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/abubakar-ai" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/muhammad-abubakar-data" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:abubakar.datasci@portfolio.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Section (Categorized with icons) -->
+    <div id="skills">
+        <h2 class="section-heading">🧠 Technical Arsenal</h2>
+        <div class="skills-wrapper">
+            <!-- Web & Core -->
+            <div class="skill-category">
+                <div class="category-title"><i class="fas fa-code"></i> Web Development & Core</div>
+                <div class="skills-flex">
+                    <span class="skill-item"><i class="fab fa-html5"></i> HTML5</span>
+                    <span class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+                    <span class="skill-item"><i class="fab fa-python"></i> Python</span>
+                </div>
+            </div>
+            <!-- Data Science -->
+            <div class="skill-category">
+                <div class="category-title"><i class="fas fa-chart-line"></i> Data Science 📊</div>
+                <div class="skills-flex">
+                    <span class="skill-item"><i class="fas fa-calculator"></i> NumPy</span>
+                    <span class="skill-item"><i class="fas fa-table"></i> Pandas</span>
+                    <span class="skill-item"><i class="fas fa-chart-simple"></i> Matplotlib</span>
+                    <span class="skill-item"><i class="fas fa-chart-area"></i> Seaborn</span>
+                </div>
+            </div>
+            <!-- Machine Learning & Deep Learning -->
+            <div class="skill-category">
+                <div class="category-title"><i class="fas fa-microchip"></i> Machine Learning & Deep Learning 🤖</div>
+                <div class="skills-flex">
+                    <span class="skill-item"><i class="fas fa-robot"></i> ML Algorithms</span>
+                    <span class="skill-item"><i class="fas fa-brain"></i> Deep Learning</span>
+                    <span class="skill-item"><i class="fas fa-network-wired"></i> Neural Networks</span>
+                </div>
+            </div>
+            <!-- Tools & IDEs -->
+            <div class="skill-category">
+                <div class="category-title"><i class="fas fa-laptop-code"></i> Tools & IDEs ⚙️</div>
+                <div class="skills-flex">
+                    <span class="skill-item"><i class="fas fa-code"></i> VS Code</span>
+                    <span class="skill-item"><i class="fas fa-book"></i> Jupyter Notebook</span>
+                    <span class="skill-item"><i class="fas fa-cloud"></i> Google Colab</span>
+                    <span class="skill-item"><i class="fab fa-python"></i> PyCharm</span>
+                </div>
+            </div>
+            <!-- Version Control -->
+            <div class="skill-category">
+                <div class="category-title"><i class="fas fa-code-branch"></i> Version Control</div>
+                <div class="skills-flex">
+                    <span class="skill-item"><i class="fab fa-git-alt"></i> Git</span>
+                    <span class="skill-item"><i class="fab fa-github"></i> GitHub</span>
+                </div>
+            </div>
+            <!-- Others: Design & Productivity -->
+            <div class="skill-category">
+                <div class="category-title"><i class="fas fa-palette"></i> Others 🎨</div>
+                <div class="skills-flex">
+                    <span class="skill-item"><i class="fab fa-figma"></i> Figma</span>
+                    <span class="skill-item"><i class="fab fa-canva"></i> Canva</span>
+                    <span class="skill-item"><i class="fas fa-video"></i> CapCut</span>
+                    <span class="skill-item"><i class="fas fa-tasks"></i> Notion</span>
+                    <span class="skill-item"><i class="fas fa-adobe"></i> Adobe Tools</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievements -->
+    <div id="achievements">
+        <h2 class="section-heading">🏆 Achievements</h2>
+        <div class="achievements-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-certificate"></i></div>
+                <h3>Sylor Academy CS105</h3>
+                <p>Certified with <strong>88.94%</strong> — strong foundation in programming & computational thinking.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-puzzle-piece"></i></div>
+                <h3>Harvard CS50x Puzzle Day 2026</h3>
+                <p><strong>🥇 1st Position Worldwide</strong> | 10/10 puzzles solved — exceptional logic & problem-solving.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section: Form + email display, github, linkedin -->
+    <div id="contact">
+        <h2 class="section-heading">📬 Let's Connect</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3><i class="fas fa-address-card"></i> Reach out directly</h3>
+                <p><i class="fas fa-envelope" style="color:#3b82f6;"></i> <strong>abubakar.datasci@portfolio.com</strong></p>
+                <p><i class="fab fa-github"></i> github.com/abubakar-ai</p>
+                <p><i class="fab fa-linkedin"></i> linkedin.com/in/muhammad-abubakar-data</p>
+                <hr style="margin: 1rem 0; border-color: var(--border-light);">
+                <p><i class="fas fa-globe"></i> Based in Faisalabad, Pakistan | Open to global collaborations</p>
+                <p><i class="fas fa-lightbulb"></i> Let's build AI that matters 🚀</p>
+            </div>
+            <div class="contact-form">
+                <h3>Send a message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="user_name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="user_email" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4" placeholder="Your message / collaboration idea..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    <div id="form-status" style="margin-top: 12px; font-size: 0.85rem;"></div>
+                </form>
+                <p style="font-size: 0.75rem; margin-top: 12px;"><i class="fas fa-shield-alt"></i> Your message will open your email client — quick & secure.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Muhammad Abubakar — Data Scientist & AI Engineer | Harvard CS50x Puzzle Day Winner</p>
+        <p style="margin-top: 6px;"><i class="fas fa-moon"></i> Dark mode default | Built with modern UI/UX</p>
+    </footer>
+</div>
+
+<script>
+    // Dark / Light mode toggle (default dark ON as per requirement)
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    // Set default dark mode class
+    body.classList.remove('light');
+    // Check localStorage but default dark
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light');
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    } else {
+        body.classList.remove('light');
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        localStorage.setItem('theme', 'dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('light')) {
+            body.classList.remove('light');
+            localStorage.setItem('theme', 'dark');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            body.classList.add('light');
+            localStorage.setItem('theme', 'light');
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+    });
+
+    // Contact form submission (email via mailto for full functionality)
+    const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('form-status');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('user_name').value.trim();
+        const email = document.getElementById('user_email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !message) {
+            statusDiv.innerHTML = '<span style="color:#ef4444;">❌ Please fill all fields.</span>';
+            return;
+        }
+        if (!email.includes('@') || !email.includes('.')) {
+            statusDiv.innerHTML = '<span style="color:#ef4444;">⚠️ Enter a valid email address.</span>';
+            return;
+        }
+
+        const recipient = "abubakar.datasci@portfolio.com";
+        const subject = `Portfolio message from ${name}`;
+        const bodyContent = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${encodeURIComponent(message)}%0A%0A-- From Muhammad Abubakar's Portfolio`;
+        const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${bodyContent}`;
+        
+        window.location.href = mailtoLink;
+        statusDiv.innerHTML = '<span style="color:#10b981;">✅ Opening your mail client — please send. Thank you!</span>';
+        form.reset();
+        setTimeout(() => {
+            statusDiv.innerHTML = '';
+        }, 5000);
+    });
+</script>
+</body>
+</html>
