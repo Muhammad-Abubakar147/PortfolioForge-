@@ -18,3 +18,22 @@
 </p>
 
 ---
+
+## ✨ Overview
+
+**Portfolio One** is a modern personal portfolio website created as part of the **PortfolioForge** collection — a series of different portfolio concepts built with core web technologies.
+
+The project focuses on creating a polished frontend experience without relying on large frameworks.
+
+```text
+HTML5
+   ↓
+Semantic Structure
+   ↓
+CSS3
+   ↓
+Visual System & Responsive Layout
+   ↓
+JavaScript
+   ↓
+Interaction & Dynamic Behaviour
