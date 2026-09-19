@@ -8,3 +8,13 @@
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Project Status">
 </p>
 
+<p align="center">
+  <strong>A modern, responsive and interactive personal portfolio website built from scratch using HTML, CSS and JavaScript.</strong>
+</p>
+
+<p align="center">
+  Designed to combine clean frontend architecture, engaging visual design,
+  responsive layouts and lightweight JavaScript interactions.
+</p>
+
+---
