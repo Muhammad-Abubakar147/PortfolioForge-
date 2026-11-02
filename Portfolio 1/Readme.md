@@ -1,0 +1,39 @@
+# ✦ Portfolio One — Modern Personal Portfolio
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Responsive-Design-8A2BE2?style=for-the-badge" alt="Responsive Design">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Project Status">
+</p>
+
+<p align="center">
+  <strong>A modern, responsive and interactive personal portfolio website built from scratch using HTML, CSS and JavaScript.</strong>
+</p>
+
+<p align="center">
+  Designed to combine clean frontend architecture, engaging visual design,
+  responsive layouts and lightweight JavaScript interactions.
+</p>
+
+---
+
+## ✨ Overview
+
+**Portfolio One** is a modern personal portfolio website created as part of the **PortfolioForge** collection — a series of different portfolio concepts built with core web technologies.
+
+The project focuses on creating a polished frontend experience without relying on large frameworks.
+
+```text
+HTML5
+   ↓
+Semantic Structure
+   ↓
+CSS3
+   ↓
+Visual System & Responsive Layout
+   ↓
+JavaScript
+   ↓
+Interaction & Dynamic Behaviour
